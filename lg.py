@@ -445,7 +445,7 @@ def show_bgpmap():
         return edges[edge_tuple]
 
     for host, asmaps in data.iteritems():
-        add_node(host, label= "%s\r%s" % (host.upper(), app.config["DOMAIN"].upper()), shape="box", fillcolor="#F5A9A9")
+        add_node(host, label= "%s\r%s" % (host.upper(), app.config["DOMAIN_EXT"].upper()), shape="box", fillcolor="#F5A9A9")
 
         as_number = app.config["AS_NUMBER"].get(host, None)
         if as_number:
