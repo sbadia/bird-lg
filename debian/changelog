@@ -1,0 +1,5 @@
+bird-lg (0.0.1-1) unstable; urgency=low
+
+  * Initial release. (Closes: #1234)
+
+ -- Sebastien Badia <seb@sebian.fr>  Sat, 10 May 2014 18:47:10 +0200

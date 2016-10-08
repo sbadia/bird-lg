@@ -1,0 +1,41 @@
+Source: bird-lg
+Section: net
+Priority: optional
+Maintainer: Sebastien Badia <seb@sebian.fr>
+Build-Depends: debhelper (>= 9),
+               python,
+               python-dnspython,
+               python-flask (>= 0.8),
+               python-pydot
+Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/python-ncclient.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/python-ncclient.git
+Homepage: https://github.com/sileth/bird-lg
+
+Package: bird-lg
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: python-dnspython,
+         python-flask (>= 0.8),
+         python-pydot,
+         ${misc:Depends},
+         ${python:Depends}
+Recommends: ${python:Recommends}
+Description: looking glass for the Bird Internet routing daemon
+ This is the proxy part, it must be installed and started on all bird nodes. It
+ act as a proxy to make traceroute and bird query on the node. Access
+ restriction to this web service can be done in file "lgproxy.cfg" (only IP
+ address based restriction for now).
+
+Package: bird-lg-proxy
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: python-dnspython,
+         python-flask (>= 0.8),
+         python-pydot,
+         ${misc:Depends},
+         ${python:Depends}
+Recommends: ${python:Recommends}
+Description: looking glass for the Bird Internet routing daemon
+ This is the frontend, a web based UI that request informations to all
+ lgproxy.py nodes. The domain and the list of all bird nodes can be done.
